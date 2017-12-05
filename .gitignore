@@ -32,3 +32,7 @@ sysinfo.txt
 # Builds
 *.apk
 *.unitypackage
+
+MultiPlatformDev/Library
+MultiPlatformDev/.vs
+MultiPlatformDev/Temp
