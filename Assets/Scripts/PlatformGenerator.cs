@@ -15,6 +15,7 @@ public class PlatformGenerator : MonoBehaviour {
         Vector3 spawnPos = new Vector3();
         for (int i = 0; i < amountOfPlatforms; i++) {
             spawnPos.y += yHeight;
+
             // x is iig nu een integer maar moet eigenlijk alleen dividable zijn door 2
             spawnPos.x = (int)Random.Range(-levelWidth, levelWidth);
             Instantiate(normalPlatformPrefab, spawnPos, Quaternion.identity);
@@ -25,4 +26,9 @@ public class PlatformGenerator : MonoBehaviour {
 	void Update () {
 		
 	}
+
+    // platform afhankelijk?
+    public void SetLevelWidth(float width) {
+        levelWidth = width;
+    }
 }
