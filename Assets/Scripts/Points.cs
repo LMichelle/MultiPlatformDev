@@ -5,6 +5,7 @@ using UnityEngine;
 public class Points : MonoBehaviour {
     ScoreManager scoreManager;
     public int score;
+    public bool destroyable;
 
     TimeManager timeManager;
     public int plusTime;
@@ -18,6 +19,9 @@ public class Points : MonoBehaviour {
         scoreManager.AddToScore(score);
         if (plusTime != 0) {
             timeManager.AddTime(plusTime);
+        }
+        if (destroyable) {
+            Destroy(gameObject);
         }
         
     }

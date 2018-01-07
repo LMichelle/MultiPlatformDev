@@ -19,19 +19,24 @@ public class UIManager : MonoBehaviour {
     public delegate void OnGameOver();
     public OnGameOver onGameOverCallback;
 
+    public delegate void OnWin();
+    public OnWin onWinCallback;
+
     // Panels
     public GameObject GameOverPanel;
+    public GameObject winPanel;
 
 
     // Use this for initialization
     void Start () {
         onGameOverCallback += ShowGameOverUI;
+        onWinCallback += ShowWinUI;
+
 	}
 	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+	public void ShowWinUI() {
+        winPanel.SetActive(true);
+    }
 
     public void ShowGameOverUI() {
         GameOverPanel.SetActive(true);

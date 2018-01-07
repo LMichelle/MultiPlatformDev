@@ -16,6 +16,13 @@ public class CameraZoom : MonoBehaviour {
 
 #if UNITY_ANDROID
     cam.orthographicSize = 10;
+    
+#endif
+    }
+
+    private void Start() {
+#if UNITY_ANDROID
+        cam.transform.position = new Vector3(0f, 5f, transform.position.z);
 #endif
     }
 }
