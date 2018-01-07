@@ -18,10 +18,10 @@ public class AndroidInputClass : BaseInput {
             }
         }
         // else, return 0.
-        // Debug.Log(Screen.width + ",  " + Screen.height);
         return 0f;
     }
 
+    // kan weg
     public override void Move() {
         base.Move();
     }
