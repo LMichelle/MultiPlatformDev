@@ -19,7 +19,6 @@ public abstract class BaseInput : MonoBehaviour {
         }
     }
 
-
     public void Update() {
         Move();
     }
@@ -28,10 +27,8 @@ public abstract class BaseInput : MonoBehaviour {
         return 0f;
     }
 
-
     public virtual void Move() {
         float input = GetInput();
-        // ipv new vector 1 aanmaken ms
         if (input < 0f) {
             transform.Translate(leftVec);
         } else if (input > 0f) {

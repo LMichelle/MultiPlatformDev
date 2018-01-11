@@ -10,6 +10,7 @@ public class TimeManager : MonoBehaviour {
         instance = this;
     }
     #endregion
+
     UIManager uiManager;
     public float time = 10f;
 
@@ -17,7 +18,8 @@ public class TimeManager : MonoBehaviour {
 
     public void Start() {
         uiManager = UIManager.instance;
-        timeBar.maxValue = time;
+        RestartTime();
+        uiManager.onGameOverCallback += StopTime;
     }
 
     public void Update() {
@@ -33,6 +35,14 @@ public class TimeManager : MonoBehaviour {
 
     public void AddTime(int num) {
         time += (float)num;
+    }
+
+    public void StopTime() {
+        time = 0;
+    }
+
+    public void RestartTime() {
+        timeBar.maxValue = time;
     }
 
 }

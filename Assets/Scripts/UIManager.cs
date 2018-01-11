@@ -16,18 +16,15 @@ public class UIManager : MonoBehaviour {
     #endregion
 
     // delegates
-    public delegate void OnGameOver();
-    public OnGameOver onGameOverCallback;
-
-    public delegate void OnWin();
-    public OnWin onWinCallback;
+    public delegate void OnGameState();
+    public OnGameState onGameOverCallback;
+    public OnGameState onWinCallback;
 
     // Panels
     public GameObject GameOverPanel;
     public GameObject winPanel;
 
 
-    // Use this for initialization
     void Start () {
         onGameOverCallback += ShowGameOverUI;
         onWinCallback += ShowWinUI;

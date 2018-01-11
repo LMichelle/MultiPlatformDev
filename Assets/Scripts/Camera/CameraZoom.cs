@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CameraZoom : MonoBehaviour {
     private int screenWidth;
@@ -10,19 +11,26 @@ public class CameraZoom : MonoBehaviour {
 
     private void Awake() {
         cam = Camera.main;
-#if UNITY_STANDALONE
-    cam.orthographicSize = 5;
-#endif
 
-#if UNITY_ANDROID
-    cam.orthographicSize = 10;
-    
-#endif
+        switch (Application.platform) {
+            case RuntimePlatform.Android:
+                cam.orthographicSize = 12;
+                return;
+            default:
+                cam.orthographicSize = 5;
+                return;
+        }
     }
 
     private void Start() {
-#if UNITY_ANDROID
-        cam.transform.position = new Vector3(0f, 5f, transform.position.z);
-#endif
+        switch (Application.platform) {
+            case RuntimePlatform.Android:
+                Scene currentScene = SceneManager.GetActiveScene();
+                if (currentScene.name == "Level") {
+                    cam.transform.position = new Vector3(0f, 7f, transform.position.z);
+                }
+                
+                return;
+        }
     }
 }

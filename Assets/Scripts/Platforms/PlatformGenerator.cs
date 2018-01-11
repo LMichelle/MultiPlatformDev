@@ -11,7 +11,6 @@ public class PlatformGenerator : MonoBehaviour {
     public float levelWidth = 6f;
     public float yHeight = 3f;
 
-	// Use this for initialization
 	void Start () {
         GenerateLevel();
 	}
@@ -38,7 +37,6 @@ public class PlatformGenerator : MonoBehaviour {
         }
     }
 	
-    // platform afhankelijk?
     public void SetLevelWidth(float width) {
         levelWidth = width;
     }

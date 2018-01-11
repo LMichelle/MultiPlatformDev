@@ -9,4 +9,8 @@ public class ResetGame : MonoBehaviour {
         SceneManager.LoadScene(sceneIndex);
     }
 
+    public void QuitGame() {
+        Application.Quit();
+    }
+
 }
